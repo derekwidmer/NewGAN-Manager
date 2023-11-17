@@ -73,7 +73,9 @@ class Mapper:
                     p_ethnic = "YugoGreek"
                 if "South American" in [n1_ethnic, n2_ethnic]:
                     p_ethnic = "South American"
-            elif player[3] in ["3", "6", "7", "8", "9"]:
+                if "Kanean" in [n1_ethnic, n2_ethnic]:
+                    p_ethnic = ["SpanMed", "YugoGreek", "Italmed"][random.randint(0, 2)]
+            elif player[3] in ["3", "6", "7", "8", "9"]: # African/Caribbean, Pacific Islander, Native American, Native Australian, Mixed Race (Black/White)
                 # SAMed with 7 is light-skinned
                 if "SAMed" == n1_ethnic and player[3] == "7":
                     p_ethnic = "SAMed"
@@ -99,6 +101,8 @@ class Mapper:
                     p_ethnic = "Scandinavian"
                 elif "Caucasian" in [n1_ethnic, n2_ethnic]:
                     p_ethnic = "Caucasian"
+                elif "Kanean" in [n1_ethnic, n2_ethnic]:
+                    p_ethnic = ["YugoGreek", "Italmed"][random.randint(0, 1)]
             elif player[3] == "4":
                 p_ethnic = "MESA"
             if player[0] in xml_data:
